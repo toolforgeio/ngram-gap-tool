@@ -1,0 +1,71 @@
+toolforge: 1.0
+container: kdvh6tkl
+type: tool
+environment:
+  size: large
+parameters:
+  - type: int
+    minimum: 1
+    maximum: 5
+    default: 1
+    name: MinNgramLength
+    description: >
+      This tool returns ngrams in a range of lengths. How many words should be
+      in the shortest ngrams the tool returns? A 1-gram is one word; a 2-gram
+      is two words; and so on.
+    required: true
+  - type: int
+    minimum: 1
+    maximum: 5
+    default: 3
+    name: MaxNgramLength
+    description: >
+      This tool returns ngrams in a range of lengths. How many words should be
+      in the longest ngrams the tool returns? A 1-gram is one word; a 2-gram
+      is two words; and so on. This value must be no less than the value given
+      in the MinNgramLength parameter.
+    required: true
+  - type: string
+    domain:
+      type: pattern
+      pattern: .{1,80}
+    name: TextColumnName1
+    description: >
+      Within the Data1 spreadsheet input, what is the name of the column
+      containing the text to analyze? The column name must match exactly.
+    required: true
+  - type: string
+    domain:
+      type: pattern
+      pattern: .{1,80}
+    name: TextColumnName2
+    description: >
+      Within the Data2 spreadsheet input, what is the name of the column
+      containing the text to analyze? The column name must match exactly.
+    required: true
+inputs:
+  - name: Data1
+    description: >
+      The spreadsheet containing the text to analyze.
+    extensions:
+      - txt
+      - csv
+      - xls
+      - xlsx
+  - name: Data2
+    description: >
+      The spreadsheet containing the text to analyze.
+    extensions:
+      - txt
+      - csv
+      - xls
+      - xlsx
+outputs:
+  - name: NgramGap
+    description: >
+      The ngram data, sorted by gap in Data1 vs Data2, descending. If there
+      are more than one million unique ngrams, the only the first one million
+      are shown.
+    extensions:
+      - csv
+      - xlsx
