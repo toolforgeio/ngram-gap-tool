@@ -199,6 +199,7 @@ public class App {
           textColumnIndex);
       ngrams = compute(
           rows.stream().parallel().peek(r -> total.incrementAndGet())
+              .peek(r -> System.out.println(r.getCell(textColumnIndex).getValue(String.class)))
               .map(r -> r.getCell(textColumnIndex).getValue(String.class)),
           minNgramLength, maxNgramLength).toList();
     } catch (IOException e) {
@@ -258,7 +259,7 @@ public class App {
 
   public static Stream<String> ngrams(List<String> tokens, int minLength, int maxLength) {
     return IntStream.range(0, tokens.size()).boxed().flatMap(
-        i -> IntStream.rangeClosed(minLength, maxLength).filter(len -> i + len < tokens.size())
+        i -> IntStream.rangeClosed(minLength, maxLength).filter(len -> i + len <= tokens.size())
             .mapToObj(len -> String.join(" ", tokens.subList(i, i + len))));
   }
 }
