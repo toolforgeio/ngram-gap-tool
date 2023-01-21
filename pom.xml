@@ -2,12 +2,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.toolforge</groupId>
-    <artifactId>toolforge-ngram-gap-tool</artifactId>
+    <artifactId>ngram-gap-tool</artifactId>
     <version>0.0.0-SNAPSHOT</version>
-    <name>toolforge-ngram-gap-tool</name>
+    <name>ngram-gap-tool</name>
     <inceptionYear>2022</inceptionYear>
     <description>Example ToolForge tool using Java</description>
-    <url>https://github.com/toolforgeio/toolforge-ngram-gap-tool-java</url>
+    <url>https://github.com/toolforgeio/ngram-gap-tool</url>
     <packaging>jar</packaging>
 
     <organization>
@@ -16,9 +16,9 @@
     </organization>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com/toolforgeio/toolforge-ngram-gap-tool-java.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/toolforgeio/toolforge-ngram-gap-tool-java.git</developerConnection>
-        <url>https://github.com/toolforgeio/toolforge-ngram-gap-tool-java/tree/main</url>
+        <connection>scm:git:ssh://git@github.com/toolforgeio/ngram-gap-tool.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/toolforgeio/ngram-gap-tool.git</developerConnection>
+        <url>https://github.com/toolforgeio/ngram-gap-tool/tree/main</url>
     </scm>
 
     <licenses>
@@ -37,7 +37,7 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/toolforgeio/toolforge-ngram-gap-tool-java</url>
+        <url>https://github.com/toolforgeio/ngram-gap-tool</url>
     </issueManagement>
 
     <properties>

@@ -86,7 +86,6 @@ public class NgramGapTest {
         {"friend", "0", "4", "1", "11", "1", "-2.75"}};
 
     for (File file : new File[] {ngramGapCsv, ngramGapXlsx}) {
-      System.out.println(file.getAbsolutePath());
       try (TabularWorksheetReader rows = SpreadsheetFactory.getInstance()
           .readActiveTabularWorksheet(() -> new FileInputStream(file))) {
         assertThat(rows.stream().map(row -> {

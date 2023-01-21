@@ -92,7 +92,7 @@ public class App {
     long total2 = ngrams.stream().mapToLong(NgramBucket::count2).sum();
 
     if (ngrams.size() > MAX_UNIQUE_NGRAM_COUNT) {
-      System.out.printf("Truncating out put to %d most common unique ngrams...\n",
+      System.out.printf("Truncating output to %d most common unique ngrams...\n",
           MAX_UNIQUE_NGRAM_COUNT);
       ngrams = ngrams.subList(0, MAX_UNIQUE_NGRAM_COUNT);
     }
@@ -199,7 +199,6 @@ public class App {
           textColumnIndex);
       ngrams = compute(
           rows.stream().parallel().peek(r -> total.incrementAndGet())
-              .peek(r -> System.out.println(r.getCell(textColumnIndex).getValue(String.class)))
               .map(r -> r.getCell(textColumnIndex).getValue(String.class)),
           minNgramLength, maxNgramLength).toList();
     } catch (IOException e) {

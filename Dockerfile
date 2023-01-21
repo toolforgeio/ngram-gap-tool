@@ -5,7 +5,7 @@ RUN apt-get update \
 
 WORKDIR /root
 
-COPY target/toolforge-ngram-gap-tool.jar /root/
+COPY target/ngram-gap-tool.jar /root/
 COPY manifest.yml /toolforge/manifest.yml
 
-ENTRYPOINT [ "/usr/bin/java", "-jar", "toolforge-ngram-gap-tool.jar" ]
+ENTRYPOINT [ "/usr/bin/java", "-jar", "ngram-gap-tool.jar" ]
