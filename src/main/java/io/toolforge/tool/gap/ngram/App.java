@@ -122,8 +122,9 @@ public class App {
   }
 
   private static double chi2(NgramBucket ngram, long total1, long total2) {
-    double observed = ngram.count1();
-    double expected = (Math.max(1.0, ngram.count1()) / total1) * total2;
+    double observed = Math.max(ngram.count1(), 1.0);
+    double expected =
+        (Math.max(1.0, ngram.count2()) / Math.max(1.0, total2)) * Math.max(1.0, total1);
     return Math.signum(observed - expected) * Math.pow(observed - expected, 2.0) / expected;
   }
 
