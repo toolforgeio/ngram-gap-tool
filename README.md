@@ -1,4 +1,4 @@
-# NGRAM GAP TOOL
+# NGRAM GAP TOOL [![tests](https://github.com/toolforgeio/ngram-gap-tool/actions/workflows/tests.yml/badge.svg)](https://github.com/toolforgeio/ngram-gap-tool/actions/workflows/tests.yml)
 
 The NGram Gap Tool performs a comparative [frequency
 analysis](https://en.wikipedia.org/wiki/Frequency_analysis) of the
@@ -32,7 +32,21 @@ For the corpora:
     yet, for good or ill, before the end; and when that comes, the pity
     of Bilbo may rule the fate of many- yours not least.
 
-The first 25 rows of output would be as follows:
+The first 10 rows of output would be as follows:
+
+| ngram  | count1 | total1 | count2 | total2 | total |    chi2     |
+| a      |   5    |  237   |   1    |  327   |   6   | 25.21844153 |
+| and    |   4    |  237   |   2    |  327   |   6   | 4.487515968 |
+| there  |   2    |  237   |   1    |  327   |   3   | 2.243757984 |
+| up     |   2    |  237   |   1    |  327   |   3   | 2.243757984 |
+| in     |   2    |  237   |   1    |  327   |   3   | 2.243757984 |
+| high   |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
+| was    |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
+| him    |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
+| in the |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
+| beauty |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
+
+The longer the text corpora are, the better the results tend to be.
 
 ## FAQ
 
