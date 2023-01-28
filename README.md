@@ -35,6 +35,7 @@ For the corpora:
 The first 10 rows of output would be as follows:
 
 | ngram  | count1 | total1 | count2 | total2 | total |    chi2     |
+| ------ | ------ | ------ | ------ | ------ | ----- | ----------- |
 | a      |   5    |  237   |   1    |  327   |   6   | 25.21844153 |
 | and    |   4    |  237   |   2    |  327   |   6   | 4.487515968 |
 | there  |   2    |  237   |   1    |  327   |   3   | 2.243757984 |
@@ -44,7 +45,7 @@ The first 10 rows of output would be as follows:
 | was    |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
 | him    |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
 | in the |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
-| beauty |   2    |  237   |   0    |  327   |   2   | 2.243757984 |
+| beauty |   2    |  237   |   0    |  327   |   2   | 2.243757984 |    
 
 The longer the text corpora are, the better the results tend to be.
 
