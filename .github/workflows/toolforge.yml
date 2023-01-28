@@ -7,6 +7,11 @@ on:
 
 permissions:
   contents: read
+  id-token: write
+
+env:
+  AWS_ACCOUNT_ID: ${{ vars.TOOLFORGE_AWS_ACCOUNT_ID }}
+  GITHUB_ORGANIZATION: ${{ vars.ORGANIZATION }}
 
 jobs:
   deploy:
@@ -34,5 +39,14 @@ jobs:
         uses: toolforgeio-actions/toolforge-docker-login@v1
         with:
           api-key: ${{ secrets.TOOLFORGE_API_KEY }}
+      - name: Configure AWS credentials for us-east-1
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/github-oidc-${{ env.GITHUB_ORGANIZATION }}-role
+          aws-region: us-east-1
+      - name: Login to Amazon ECR Public Registry
+        uses: aws-actions/amazon-ecr-login@v1
+        with:
+          registry-type: public
       - name: Build and Deploy to ToolForge
         run: mvn -B clean compile install docker:push
