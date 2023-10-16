@@ -40,7 +40,7 @@ jobs:
         with:
           api-key: ${{ secrets.TOOLFORGE_API_KEY }}
       - name: Configure AWS credentials for us-east-1
-        uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/github-oidc-${{ env.GITHUB_ORGANIZATION }}-role
           aws-region: us-east-1
